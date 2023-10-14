@@ -1,0 +1,235 @@
+body {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0;
+    background-color: dimgray;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    /* Shift the keyboard to the bottom */
+    margin-top: 200px;
+}
+
+.row {
+    display: flex;
+    align-items: flex-end;
+}
+
+.row_lb {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+}
+
+.letter {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    color: #ffffff;
+    border-width: 2px;
+    border-color: #b7b7b7;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 10px;
+    /* Increased margin for larger gaps */
+    margin-right: 13px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.1s;
+}
+
+.extra {
+    width: 140px;
+    height: 60px;
+    border-radius: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    color: #ffffff;
+    border-width: 2px;
+    border-color: #b7b7b7;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 10px;
+    /* Increased margin for larger gaps */
+    margin-right: 13px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.1s;
+}
+
+.light {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #350e00;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 5px;
+    /* Increased margin for larger gaps */
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.1s;
+}
+
+.temp-light {
+    background-color: yellow;
+    /* or any color you want for the temporary lighting effect */
+}
+
+.letter:hover {
+    transform: scale(1.1);
+    background-color: #414040;
+}
+
+.letter:active {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.message {
+    height: 175px;
+    width: 315px;
+    resize: none;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #030303;
+
+}
+
+.messageBlock {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+
+.output {
+    height: 175px;
+    max-height: 175px;
+    width: 315px;
+    max-width: 315px;
+    resize: none;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #030303;
+}
+
+.outputBlock {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    padding-top: 20px;
+    padding-right: 30px;
+}
+
+.prompt {
+    position: absolute;
+    top: 5px;
+    left: 34%;
+    padding: 10px;
+    padding-top: 0px;
+    font-size: 15;
+}
+
+.p1 {
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.p2 {
+    padding-bottom: 15px;
+}
+
+.selectors {
+    position: absolute;
+    top: 0;
+    left: 48%;
+    margin-top: 25px;
+}
+
+.rotorSelector {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.keySelector {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.plugboard {
+    height: 25px;
+    width: 205px;
+    max-width: 300px;
+    min-width: 205px;
+    resize: horizontal;
+    text-align: left;
+    font-size: 25px;
+    font-weight: normal;
+    color: #030303;
+    padding-top: 10px;
+}
+
+:root {
+    --radius: 4px;
+    --baseFg: black;
+    --baseBg: white;
+    --accentFg: #000001;
+    --accentBg: #575757;
+}
+
+
+select {
+    font: 400 14px/1.3 sans-serif;
+    -webkit-appearance: none;
+    appearance: none;
+    color: var(--baseFg);
+    border: 1px solid var(--baseFg);
+    line-height: 1;
+    outline: 0;
+    padding: 0.65em 2.5em 0.55em 0.75em;
+    border-radius: var(--radius);
+    background-color: var(--baseBg);
+    background-image: linear-gradient(var(--baseFg), var(--baseFg)),
+        linear-gradient(-135deg, transparent 50%, var(--accentBg) 50%),
+        linear-gradient(-225deg, transparent 50%, var(--accentBg) 50%),
+        linear-gradient(var(--accentBg) 42%, var(--accentFg) 42%);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-size: 1px 100%, 20px 22px, 20px 22px, 20px 100%;
+    background-position: right 20px center, right bottom, right bottom, right bottom;
+}
+
+select:hover {
+    background-image: linear-gradient(var(--accentFg), var(--accentFg)),
+        linear-gradient(-135deg, transparent 50%, var(--accentFg) 50%),
+        linear-gradient(-225deg, transparent 50%, var(--accentFg) 50%),
+        linear-gradient(var(--accentFg) 42%, var(--accentBg) 42%);
+}
+
+select:active {
+    background-image: linear-gradient(var(--accentFg), var(--accentFg)),
+        linear-gradient(-135deg, transparent 50%, var(--accentFg) 50%),
+        linear-gradient(-225deg, transparent 50%, var(--accentFg) 50%),
+        linear-gradient(var(--accentFg) 42%, var(--accentBg) 42%);
+    color: var(--accentBg);
+    border-color: var(--accentFg);
+    background-color: var(--accentFg);
+}

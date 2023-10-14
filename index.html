@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- https://enigmamachinesimulatorazz.000webhostapp.com/ -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Enigma Machine Simulator</title>
+</head>
+
+<body>
+    <div class="messageBlock">
+        <h1>Original Message:</h1>
+        <textarea id="messageField" class="message" type="text" spellcheck=false
+            maxlength="315">Enter Your Message</textarea>
+    </div>
+    <div class="outputBlock">
+        <h1>Encrypted Message:</h1>
+        <textarea id="outputField" class="output" type="text" disabled>Encrypted Message</textarea>
+    </div>
+    <div class="prompt">
+        <h2 class="p1">Select Rotors:</h2>
+        <h2 class="p2">Select Keys:</h2>
+        <h2 class="p3">Select Plugs:</h2>
+    </div>
+    <div class="selectors">
+        <div class="rotorSelector">
+            <select name="Rotor 1" id="rot1">
+                <option value="0" selected>I</option>
+                <option value="1">II</option>
+                <option value="2">III</option>
+                <option value="3">IV</option>
+                <option value="4">V</option>
+            </select>
+            <select name="Rotor 2" id="rot2">
+                <option value="0">I</option>
+                <option value="1" selected>II</option>
+                <option value="2">III</option>
+                <option value="3">IV</option>
+                <option value="4">V</option>
+            </select>
+            <select name="Rotor 3" id="rot3">
+                <option value="0">I</option>
+                <option value="1">II</option>
+                <option value="2" selected>III</option>
+                <option value="3">IV</option>
+                <option value="4">V</option>
+            </select>
+        </div>
+        <div class="keySelector">
+            <select name="Key 1" id="key1">
+                <option value="0">A</option>
+                <option value="1">B</option>
+                <option value="2">C</option>
+                <option value="3">D</option>
+                <option value="4">E</option>
+                <option value="5">F</option>
+                <option value="6">G</option>
+                <option value="7">H</option>
+                <option value="8">I</option>
+                <option value="9">J</option>
+                <option value="10">K</option>
+                <option value="11">L</option>
+                <option value="12">M</option>
+                <option value="13">N</option>
+                <option value="14">O</option>
+                <option value="15">P</option>
+                <option value="16">Q</option>
+                <option value="17">R</option>
+                <option value="18">S</option>
+                <option value="19">T</option>
+                <option value="20">U</option>
+                <option value="21">V</option>
+                <option value="22">W</option>
+                <option value="23">X</option>
+                <option value="24">Y</option>
+                <option value="25">Z</option>
+            </select>
+            <select name="Key 2" id="key2">
+                <option value="0">A</option>
+                <option value="1">B</option>
+                <option value="2">C</option>
+                <option value="3">D</option>
+                <option value="4">E</option>
+                <option value="5">F</option>
+                <option value="6">G</option>
+                <option value="7">H</option>
+                <option value="8">I</option>
+                <option value="9">J</option>
+                <option value="10">K</option>
+                <option value="11">L</option>
+                <option value="12">M</option>
+                <option value="13">N</option>
+                <option value="14">O</option>
+                <option value="15">P</option>
+                <option value="16">Q</option>
+                <option value="17">R</option>
+                <option value="18">S</option>
+                <option value="19">T</option>
+                <option value="20">U</option>
+                <option value="21">V</option>
+                <option value="22">W</option>
+                <option value="23">X</option>
+                <option value="24">Y</option>
+                <option value="25">Z</option>
+            </select>
+            <select name="Key 3" id="key3">
+                <option value="0">A</option>
+                <option value="1">B</option>
+                <option value="2">C</option>
+                <option value="3">D</option>
+                <option value="4">E</option>
+                <option value="5">F</option>
+                <option value="6">G</option>
+                <option value="7">H</option>
+                <option value="8">I</option>
+                <option value="9">J</option>
+                <option value="10">K</option>
+                <option value="11">L</option>
+                <option value="12">M</option>
+                <option value="13">N</option>
+                <option value="14">O</option>
+                <option value="15">P</option>
+                <option value="16">Q</option>
+                <option value="17">R</option>
+                <option value="18">S</option>
+                <option value="19">T</option>
+                <option value="20">U</option>
+                <option value="21">V</option>
+                <option value="22">W</option>
+                <option value="23">X</option>
+                <option value="24">Y</option>
+                <option value="25">Z</option>
+            </select>
+        </div>
+        <textarea type="text" id="plugs" class="plugboard" spellcheck="false"></textarea>
+
+    </div>
+    <div class="keyboard">
+        <div class="row_lb" id="row1">
+            <button class="light" data-letter="Q" onclick="lampBoardError()">Q</button>
+            <button class="light" data-letter="W" onclick="lampBoardError()">W</button>
+            <button class="light" data-letter="E" onclick="lampBoardError()">E</button>
+            <button class="light" data-letter="R" onclick="lampBoardError()">R</button>
+            <button class="light" data-letter="T" onclick="lampBoardError()">T</button>
+            <button class="light" data-letter="Y" onclick="lampBoardError()">Y</button>
+            <button class="light" data-letter="U" onclick="lampBoardError()">U</button>
+            <button class="light" data-letter="I" onclick="lampBoardError()">I</button>
+            <button class="light" data-letter="O" onclick="lampBoardError()">O</button>
+            <button class="light" data-letter="P" onclick="lampBoardError()">P</button>
+        </div>
+        <div class="row_lb" id="row2">
+            <button class="light" data-letter="A" onclick="lampBoardError()">A</button>
+            <button class="light" data-letter="S" onclick="lampBoardError()">S</button>
+            <button class="light" data-letter="D" onclick="lampBoardError()">D</button>
+            <button class="light" data-letter="F" onclick="lampBoardError()">F</button>
+            <button class="light" data-letter="G" onclick="lampBoardError()">G</button>
+            <button class="light" data-letter="H" onclick="lampBoardError()">H</button>
+            <button class="light" data-letter="J" onclick="lampBoardError()">J</button>
+            <button class="light" data-letter="K" onclick="lampBoardError()">K</button>
+            <button class="light" data-letter="L" onclick="lampBoardError()">L</button>
+        </div>
+        <div class="row_lb" id="row3">
+            <button class="light" data-letter="Z" onclick="lampBoardError()">Z</button>
+            <button class="light" data-letter="X" onclick="lampBoardError()">X</button>
+            <button class="light" data-letter="C" onclick="lampBoardError()">C</button>
+            <button class="light" data-letter="V" onclick="lampBoardError()">V</button>
+            <button class="light" data-letter="B" onclick="lampBoardError()">B</button>
+            <button class="light" data-letter="N" onclick="lampBoardError()">N</button>
+            <button class="light" data-letter="M" onclick="lampBoardError()">M</button>
+        </div>
+
+
+        <div class="row">
+            <button class="letter" onclick="appendToMessage('Q')">Q</button>
+            <button class="letter" onclick="appendToMessage('W')">W</button>
+            <button class="letter" onclick="appendToMessage('E')">E</button>
+            <button class="letter" onclick="appendToMessage('R')">R</button>
+            <button class="letter" onclick="appendToMessage('T')">T</button>
+            <button class="letter" onclick="appendToMessage('Y')">Y</button>
+            <button class="letter" onclick="appendToMessage('U')">U</button>
+            <button class="letter" onclick="appendToMessage('I')">I</button>
+            <button class="letter" onclick="appendToMessage('O')">O</button>
+            <button class="letter" onclick="appendToMessage('P')">P</button>
+            <button class="extra" onclick="enterClick()">ENTER</button>
+        </div>
+        <div class="row">
+            <button class="letter" onclick="appendToMessage('A')">A</button>
+            <button class="letter" onclick="appendToMessage('S')">S</button>
+            <button class="letter" onclick="appendToMessage('D')">D</button>
+            <button class="letter" onclick="appendToMessage('F')">F</button>
+            <button class="letter" onclick="appendToMessage('G')">G</button>
+            <button class="letter" onclick="appendToMessage('H')">H</button>
+            <button class="letter" onclick="appendToMessage('J')">J</button>
+            <button class="letter" onclick="appendToMessage('K')">K</button>
+            <button class="letter" onclick="appendToMessage('L')">L</button>
+            <button class="extra" onclick="clearMessageField()">CLEAR</button>
+        </div>
+        <div class="row">
+            <button class="letter" onclick="appendToMessage('Z')">Z</button>
+            <button class="letter" onclick="appendToMessage('X')">X</button>
+            <button class="letter" onclick="appendToMessage('C')">C</button>
+            <button class="letter" onclick="appendToMessage('V')">V</button>
+            <button class="letter" onclick="appendToMessage('B')">B</button>
+            <button class="letter" onclick="appendToMessage('N')">N</button>
+            <button class="letter" onclick="appendToMessage('M')">M</button>
+            <button class="extra" onclick="resetDefault()">RESET</button>
+            
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
