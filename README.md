@@ -12,7 +12,7 @@
 Welcome to the Enigma Machine Simulator project, an interactive web-based simulation of the iconic encryption device used during World War II. This project was developed as part of the Harvard University CS50X course, designed to provide users with a deep understanding of the Enigma machine's operation and encryption principles. 
 
 ## Project Overview
-The Enigma Machine Simulator is a fully functional representation of the historic encryption device. It offers users the opportunity to explore the 159 quintillion different settings that the original Enigma machine was capable of, making it a valuable educational tool for those interested in cryptography and history. 
+The Enigma Machine Simulator is a fully functional representation of the historic encryption device. It offers users the opportunity to explore the 159 quintillion different settings that the original Enigma machine was capable of, making it a valuable educational tool for those interested in cryptography and history.  
 
 ## Features
 - **Realistic Simulation**: Experience the Enigma machine's encryption process in a faithful, accurate representation of the original device.
