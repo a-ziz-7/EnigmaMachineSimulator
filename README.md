@@ -1,6 +1,6 @@
 # Enigma Machine Simulator
  
-## Table of Contents
+## Table of Contents 
 - [Introduction](#introduction)
 - [Project Overview](#project-overview)
 - [Features](#features)
